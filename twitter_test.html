@@ -2717,8 +2717,8 @@ I'm From Mexico, Puebla. I'm a frontend developer. You can check out more of my 
 																																				<a href="https://twitter.com/volrath" target="_blank" class="button-bottom right-button w-button">Twitter</a>
 																																			</div>
 																																		</div>
-																																	</div>
-																																</div>
+																													</div>
+																												</div>
 																																<div class="collection-list-wrapper w-hidden-small w-hidden-tiny w-dyn-list">
 																																	<div class="filter-list w-dyn-items">
 																																		<div class="collection-item mix move-up w-dyn-item">
@@ -7897,7 +7897,7 @@ $(document).ready(function() {
   var checkboxGroup = document.querySelector('.left-nav-div');
   var checkboxes = checkboxGroup.querySelectorAll('input[type="checkbox"]');
 
-    console.log(containerEl);
+    console.log(containerEl+"containerEl");
     console.log(checkboxGroup);
     console.log(checkboxes);
 
@@ -7915,9 +7915,7 @@ $(document).ready(function() {
         sort: 'random'
     }
     });
-  
-  
-
+ 
  
   checkboxGroup.addEventListener('change', function(e) {
 

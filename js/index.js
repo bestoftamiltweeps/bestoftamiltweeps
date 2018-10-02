@@ -3,6 +3,7 @@ $(document).ready(function() {
     //console.log(data);
        
     var profile_details = "";
+   
 
     $.each(data, function(key, profile_value) {
         
@@ -61,13 +62,14 @@ $(document).ready(function() {
         profile_details	+=	'</div>';
 		profile_details	+=	'</div>';
 
+
+
       });
 
       //console.log(profile_details);
 
       $("#target-container").html(profile_details);
-
-
+     
       var slug = function(str) {
         var $slug = '';
         var trimmed = $.trim(str);
@@ -181,8 +183,6 @@ $(document).ready(function() {
     }
     });
   
-  
-
  
   checkboxGroup.addEventListener('change', function(e) {
 
@@ -209,7 +209,5 @@ $(document).ready(function() {
     var selectorString = selectors.length > 0 ?
     selectors.join(',') :  'all';
     mixer.filter(selectorString);
-
-    console.log(selectorString+"selectorString");
 
   });
