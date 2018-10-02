@@ -45,24 +45,13 @@ $(document).ready(function() {
 
                 profile_details	+= '<div class="category-trigger w-dyn-bind-empty"></div>';
             }
-
-            
-
         }
 
-       // profile_details	+=	'<div class="category-trigger">'+category+'</div>';
-        /*profile_details	+=	'<div class="category-trigger">Product Designer</div>';
-        profile_details	+=	'<div class="category-trigger">3D Artist</div>';
-        profile_details	+=	'<div class="category-trigger">Web Designer</div>';
-        profile_details	+=	'<div class="category-trigger w-dyn-bind-empty"></div>';*/
         profile_details	+=	'</div>';
         profile_details	+=	'<div class="buttons-div">';
-       // profile_details	+=	'<a href="http://www.synthridersvr.com/" target="_blank" class="button-bottom no-right-border w-button">Site</a>';
         profile_details	+=	'<a href="'+handle_name+'" target="_blank" class="button-bottom right-button w-button">Twitter</a>';
         profile_details	+=	'</div>';
 		profile_details	+=	'</div>';
-
-
 
       });
 
@@ -84,30 +73,18 @@ $(document).ready(function() {
   	$('.filter-list .w-dyn-item').each(function () {
 
         // The five Category Text Blocks
-       /* var category1 = slug($(this).find('.category-inlay:nth-child(1)').text());
+        var category1 = slug($(this).find('.category-inlay:nth-child(1)').text());
         var category2 = slug($(this).find('.category-inlay:nth-child(2)').text());
         var category3 = slug($(this).find('.category-inlay:nth-child(3)').text());	
         var category4 = slug($(this).find('.category-inlay:nth-child(4)').text());
-        var category5 = slug($(this).find('.category-inlay:nth-child(5)').text());*/
+        var category5 = slug($(this).find('.category-inlay:nth-child(5)').text());
 
-        $('.category-trigger').each(function () {
-        
-           var category = slug($(this).text());
 
-            if($(this).parent().parent().hasClass("collection-item")){
-               
-                $(this).parent().parent().addClass(category);
-
-            }
-
-        });
-
-        
-      /*  $(this).addClass(category1);
+        $(this).addClass(category1);
         $(this).addClass(category2);
         $(this).addClass(category3);
         $(this).addClass(category4);
-        $(this).addClass(category5);*/
+        $(this).addClass(category5);
     });
 
 
@@ -122,92 +99,88 @@ $(document).ready(function() {
    });
  
  
-     // Code#004: Show All
-     $('.filter-item:first-child').click(function(){
-     
-         $('#filter-list .w-dyn-item').delay(500).css('display', 'block');
-   });
- 
-     // Code#005: Set Active for Category "All"
-     $('.filter-item:first-child').addClass('filter-active');
-
-
+    // Code#004: Show All
+    $('.filter-item:first-child').click(function(){
     
+        $('#filter-list .w-dyn-item').delay(500).css('display', 'block');
 
- });
+    });
+ 
+    // Code#005: Set Active for Category "All"
+    $('.filter-item:first-child').addClass('filter-active');
 
- // Reusable function to convert any string/text to css-friendly format
- var conv = function (str) {
-    if (!str) {
-        str = 'empty';
+ 
+
+    // Reusable function to convert any string/text to css-friendly format
+    var conv = function (str) {
+        if (!str) {
+            str = 'empty';
+            }
+        return str.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '')
+                .replace(/ /g, "-")
+                .toLowerCase()
+                .trim();
+    }; 
+
+    // Creating dynamic elements classes from its categories:
+    var catArray = document.querySelectorAll('.w-dyn-item .category-trigger');
+    catArray.forEach( function(elem) {
+        var text = elem.innerText || elem.innerContent;
+        var className = conv(text);
+        if (!isNaN(parseInt(className.charAt(0), 10))) {
+            className = ("_" + className);
+            }
+        elem.parentElement.parentElement.classList.add(className);
+    });
+    
+    // Move all items to one container
+    var moveItems = document.querySelectorAll('.move-up');
+    moveItems.forEach( function(move) {
+        document.getElementById('target-container').appendChild(move);
+    });
+    
+    var containerEl = document.querySelector('.filter-list');
+    var checkboxGroup = document.querySelector('.left-nav-div');
+    var checkboxes = checkboxGroup.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach( function(elem) {
+        var dataValue = conv(elem.getAttribute("data-value"));
+        if (!isNaN(parseInt(dataValue.charAt(0), 10))) {
+                dataValue = ("_" + dataValue);
+                }
+        elem.setAttribute('value', '.' + dataValue);
+    });
+    var allCheckbox = document.querySelector('.clear');
+    allCheckbox.setAttribute('value', 'all');
+    var mixer = mixitup(containerEl, {
+        load: {
+            sort: 'random'
         }
-    return str.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '')
-              .replace(/ /g, "-")
-              .toLowerCase()
-              .trim();
-  }; 
- 
-  // Creating dynamic elements classes from its categories:
-  var catArray = document.querySelectorAll('.w-dyn-item .category-trigger');
-  catArray.forEach( function(elem) {
-     var text = elem.innerText || elem.innerContent;
-     var className = conv(text);
-     if (!isNaN(parseInt(className.charAt(0), 10))) {
-          className = ("_" + className);
-          }
-     elem.parentElement.parentElement.classList.add(className);
-  });
-  
-  // Move all items to one container
-  var moveItems = document.querySelectorAll('.move-up');
- moveItems.forEach( function(move) {
-    document.getElementById('target-container').appendChild(move);
- });
- 
-  var containerEl = document.querySelector('.filter-list');
-  var checkboxGroup = document.querySelector('.left-nav-div');
-  var checkboxes = checkboxGroup.querySelectorAll('input[type="checkbox"]');
-
-  checkboxes.forEach( function(elem) {
-      var dataValue = conv(elem.getAttribute("data-value"));
-      if (!isNaN(parseInt(dataValue.charAt(0), 10))) {
-     		 dataValue = ("_" + dataValue);
-      		}
-      elem.setAttribute('value', '.' + dataValue);
-  });
-  var allCheckbox = document.querySelector('.clear');
-  allCheckbox.setAttribute('value', 'all');
-  var mixer = mixitup(containerEl, {
-    load: {
-        sort: 'random'
-    }
     });
   
  
-  checkboxGroup.addEventListener('change', function(e) {
+    checkboxGroup.addEventListener('change', function(e) {
 
-    var selectors = [];
-    var checkbox;
-    var i;
-    if (e.target === allCheckbox && e.target.checked) {
-      for (i = 0; i < checkboxes.length; i++) {
+        var selectors = [];
+        var checkbox;
+        var i;
+        if (e.target === allCheckbox && e.target.checked) {
+        for (i = 0; i < checkboxes.length; i++) {
+            checkbox = checkboxes[i];
+            if (checkbox !== allCheckbox) checkbox.checked = false;
+        }
+        } else {
+            allCheckbox.checked = false;
+        }
+        for (i = 0; i < checkboxes.length; i++) {
         checkbox = checkboxes[i];
-          if (checkbox !== allCheckbox) checkbox.checked = false;
-      }
-    } else {
-          allCheckbox.checked = false;
-      }
-    for (i = 0; i < checkboxes.length; i++) {
-      checkbox = checkboxes[i];
-     
-        if (checkbox.checked) selectors.push(checkbox.value);
-    }
+        
+            if (checkbox.checked) selectors.push(checkbox.value);
+        }
+        
+        var selectorString = selectors.length > 0 ?
+        selectors.join(',') :  'all';
+        mixer.filter(selectorString);
 
-   // console.log(checkbox+"checkbox");
-   // console.log(checkboxes+"checkboxes");
+    });
+});
 
-    var selectorString = selectors.length > 0 ?
-    selectors.join(',') :  'all';
-    mixer.filter(selectorString);
-
-  });
