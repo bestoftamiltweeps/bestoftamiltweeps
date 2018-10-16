@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -34,7 +34,7 @@
   <meta name="twitter:creator" content="@BestTamilTweeps" />
 
 		<link href="https://global-uploads.webflow.com/5b9d51414158adc5804fc90e/css/latinxs-who-design.webflow.e28184f3d.css" rel="stylesheet" type="text/css"/>
-
+		<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
@@ -99,6 +99,56 @@ overflow: hidden;
   ::-webkit-scrollbar-corner       { display: none; height: 0px; width: 0px; }
 
 </style>
+
+<style>
+/**
+CSS code : return to top button
+*/
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+
+</style>
+
+
 </head>
 <body class="body">
 	<div role="main" class="section">
@@ -108,7 +158,7 @@ overflow: hidden;
 			</a>
 			<div class="other-links-div">
 				<a href="./about.html" class="secondary-link">About</a>
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLSe3PRbI3GthSxEilAM8R56jMj9myH_Sd2m4sQSev3vfUNvG_Q/viewform" target="_blank" class="secondary-link">Nominate</a>
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLSe3PRbI3GthSxEilAM8R56jMj9myH_Sd2m4sQSev3vfUNvG_Q/viewform" target="_blank" class="secondary-link">Nominate Tweeps</a>
 			</div>
 
 			<div class="category-collection-list-wrapper w-hidden-tiny w-dyn-list">
@@ -136,7 +186,7 @@ overflow: hidden;
 									<label for="Writing" class="w-form-label">Writing</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">🔬</p>
+						<p aria-hidden="true" class="emoji">✍️</p>
 					</div>
 
 					<div class="filter-item w-dyn-item">
@@ -146,7 +196,7 @@ overflow: hidden;
 									<label for="Blogging" class="w-form-label">Blogging</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">📦</p>
+						<p aria-hidden="true" class="emoji">🌐</p>
 					</div>
 
 					<div class="filter-item w-dyn-item">
@@ -156,7 +206,7 @@ overflow: hidden;
 									<label for="Reading" class="w-form-label">Reading</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">👷🏽‍♀️</p>
+						<p aria-hidden="true" class="emoji">📖</p>
 					</div>
 
 					<div class="filter-item w-dyn-item">
@@ -186,7 +236,7 @@ overflow: hidden;
 									<label for="Medical" class="w-form-label">Medical</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">💄</p>
+						<p aria-hidden="true" class="emoji">🏥</p>
 					</div>
 
 					<div class="filter-item w-dyn-item">
@@ -196,7 +246,7 @@ overflow: hidden;
 									<label for="Tech" class="w-form-label">Tech</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">🏹</p>
+						<p aria-hidden="true" class="emoji">🖥️</p>
 					</div>
 
 					<div class="filter-item w-dyn-item">
@@ -206,7 +256,7 @@ overflow: hidden;
 									<label for="Cooking" class="w-form-label">Cooking</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">🎨</p>
+						<p aria-hidden="true" class="emoji">🍳</p>
 					</div>
 
 					<div class="filter-item w-dyn-item">
@@ -216,7 +266,7 @@ overflow: hidden;
 									<label for="Photography" class="w-form-label">Photography</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">👩‍👩‍👦‍👦</p>
+						<p aria-hidden="true" class="emoji">📷</p>
 					</div>
 
 					<div class="filter-item w-dyn-item">
@@ -246,10 +296,10 @@ overflow: hidden;
 									<label for="News" class="w-form-label">News</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">👩🏽‍✈️</p>
+						<p aria-hidden="true" class="emoji">📰</p>
 					</div>
 
-					<div class="filter-item w-dyn-item">
+					<!--<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
 								<input type="checkbox" id="Music" name="Checkbox" data-name="Checkbox" class="w-checkbox-input" data-value=".Music">
@@ -257,7 +307,7 @@ overflow: hidden;
 							</div>
 						</div>
 						<p aria-hidden="true" class="emoji">🐠</p>
-					</div>
+					</div>-->
 
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
@@ -266,7 +316,7 @@ overflow: hidden;
 									<label for="Sports" class="w-form-label">Sports</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">🖥</p>
+						<p aria-hidden="true" class="emoji">⚽</p>
 					</div>
 
 					<div class="filter-item w-dyn-item">
@@ -276,7 +326,7 @@ overflow: hidden;
 									<label for="Founder" class="w-form-label">Founder</label>
 							</div>
 						</div>
-						<p aria-hidden="true" class="emoji">🌱</p>
+						<p aria-hidden="true" class="emoji">👑</p>
 					</div>
 				</div>
 			</div>
@@ -292,7 +342,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">🔬</p>
 					</div>
-						
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -302,7 +352,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">📦</p>
 					</div>
-						
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -312,7 +362,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">👷🏽‍♀️</p>
 					</div>
-								
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -322,7 +372,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">🚢</p>
 					</div>
-									
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -332,7 +382,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">🦅</p>
 					</div>
-										
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -342,7 +392,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">💄</p>
 					</div>
-											
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -352,7 +402,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">🏹</p>
 					</div>
-												
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -362,7 +412,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">🎨</p>
 					</div>
-													
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -372,7 +422,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">👩‍👩‍👦‍👦</p>
 					</div>
-														
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -382,7 +432,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">🎬</p>
 					</div>
-															
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -392,7 +442,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">👩🏽‍🎨</p>
 					</div>
-																
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -402,7 +452,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">👩🏽‍✈️</p>
 					</div>
-																	
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -412,7 +462,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">🐠</p>
 					</div>
-																		
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -422,7 +472,7 @@ overflow: hidden;
 						</div>
 						<p aria-hidden="true" class="emoji">🖥</p>
 					</div>
-																			
+
 					<div class="filter-item w-dyn-item">
 						<div class="html-embed w-embed">
 							<div class="checkbox w-checkbox">
@@ -466,11 +516,30 @@ overflow: hidden;
 			</div>
 		</div>
 	</div>
+		<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+</button>
 
 
 </body>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.0/mixitup.min.js"></script>
 	<script src="js/index.js"></script>
+<script>
 
+
+		// ===== Scroll to Top ====
+		$(window).scroll(function() {
+		    if ($(this).scrollTop() >= 500) {        // If page is scrolled more than 50px
+		        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+		    } else {
+		        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+		    }
+		});
+		$('#return-to-top').click(function() {      // When arrow is clicked
+		    $('body,html').animate({
+		        scrollTop : 0                       // Scroll to top of body
+		    }, 500);
+		});
+</script>
 </html>
