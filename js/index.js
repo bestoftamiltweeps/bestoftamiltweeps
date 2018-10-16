@@ -19,8 +19,9 @@ $(document).ready(function() {
 
         profile_details +=  '<div data-w-id="38b9e8b8-0a9b-2cc4-92ad-1f22767dd9db" class="collection-item mix w-dyn-item">';
 		profile_details +=	'<a href="'+handle_name+'" target="_blank" aria-hidden="true" class="image-link-block w-inline-block">';
-		profile_details +=	'<div class="image-div">';
-		profile_details +=	'<img alt=" " src="'+profile_pic+'" sizes="(max-width: 479px) 97vw, (max-width: 767px) 48vw, (max-width: 991px) 571.953125px, 28vw" srcset="'+profile_pic+' 500w, '+profile_pic+' 720w" class="image"/>';
+        profile_details +=	'<div class="image-div">';
+        profile_details +=  '<img src="'+profile_pic+'"  onerror="this.onerror=null;this.src=\'./image/bestoftt.png\'" sizes="(max-width: 479px) 97vw, (max-width: 767px) 48vw, (max-width: 991px) 571.953125px, 28vw" srcset="'+profile_pic+' 500w, '+profile_pic+' 720w" class="image">';
+		//profile_details +=	'<img alt=" " src="'+profile_pic+'" sizes="(max-width: 479px) 97vw, (max-width: 767px) 48vw, (max-width: 991px) 571.953125px, 28vw" srcset="'+profile_pic+' 500w, '+profile_pic+' 720w" class="image"/>';
 		profile_details	+=  '</div>';
 		profile_details	+=	'</a>';
 		profile_details	+=	'<a href="'+handle_name+'" class="name-link">'+display_name+'</a>';
@@ -182,5 +183,6 @@ $(document).ready(function() {
         mixer.filter(selectorString);
 
     });
+
 });
 
